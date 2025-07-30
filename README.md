@@ -1,5 +1,6 @@
 # Simple Calculator Program
-A basic python program that takes two numbers and a mathematical operation as input from the user and performs the specified operations, 
+A basic python program that takes two numbers and a mathematical operation as input from the user and performs the specified operation.
+# Table of content
 - #getting-started
 - #usage
 - #operations
