@@ -1,0 +1,48 @@
+def calculator():
+   # Get user input
+   num1 = float(input("Enter the first number: "))
+   operation = input("Enter the operation (+, -, *, /): ")
+   num2 = float(input("Enter the second number: "))
+
+   # Perform operation
+   if operation == "+":
+       result = num1 + num2
+       print(f"{num1} + {num2} = {result}")
+   elif operation == "-":
+       result = num1 - num2
+       print(f"{num1} - {num2} = {result}")
+   elif operation == "*":
+       result = num1 * num2
+       print(f"{num1} * {num2} = {result}")
+   elif operation == "/":
+       if num2 != 0:
+           result = num1 / num2
+           print(f"{num1} / {num2} = {result}")
+       else:
+           print("Error: Division by zero!")
+   else:
+       print("Invalid operation. Please use +, -, *, or /.")
+calculator()
+
+
+Alternatively, you can use a dictionary to map operations to functions:
+def calculator():
+    operations = {
+        "+": lambda x, y: x + y,
+        "-": lambda x, y: x - y,
+        "*": lambda x, y: x * y,
+        "/": lambda x, y: x / y if y != 0 else "Error: Division by zero!"
+    }
+
+    num1 = float(input("Enter the first number: "))
+    operation = input("Enter the operation (+, -, *, /): ")
+    num2 = float(input("Enter the second number: "))
+
+    if operation in operations:
+        result = operations[operation](num1, num2)
+        if isinstance(result, str) and result.startswith("Error"):
+            print(result)
+        else:
+            print(f"{num1} {operation} {num2} = {result}")
+    else:
+        print("Invalid operation. Please use +, -, *, or /.")
